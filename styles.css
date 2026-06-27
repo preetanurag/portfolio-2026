@@ -517,6 +517,106 @@ p { color: var(--muted); line-height: 1.75; }
   }
 }
 
+.market-mind-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 0.48fr);
+  gap: clamp(1rem, 4vw, 2rem);
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 86% 10%, rgba(134, 223, 210, 0.18), transparent 22rem),
+    linear-gradient(135deg, rgba(240, 168, 79, 0.13), rgba(245, 239, 231, 0.055));
+  box-shadow: var(--shadow);
+  padding: clamp(1.35rem, 4vw, 2.6rem);
+}
+
+.project-kicker {
+  display: inline-flex;
+  margin-bottom: 1rem;
+  color: var(--mint);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.market-mind-card h3 {
+  margin-bottom: 1rem;
+  font-family: var(--serif);
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 0.9;
+}
+
+.market-mind-card p {
+  max-width: 680px;
+}
+
+.market-mind-symbol {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 260px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: rgba(16, 18, 22, 0.42);
+}
+
+.market-mind-symbol span {
+  position: absolute;
+  width: 9rem;
+  aspect-ratio: 1;
+  border: 2px solid rgba(134, 223, 210, 0.55);
+  border-radius: 42% 58% 48% 52%;
+  box-shadow: 0 0 70px rgba(134, 223, 210, 0.18);
+}
+
+.market-mind-symbol::before,
+.market-mind-symbol::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  bottom: 54px;
+  border-radius: 999px;
+  background: var(--amber);
+  box-shadow: 20px -28px 0 var(--mint), 40px -8px 0 var(--amber), 60px -46px 0 var(--mint);
+}
+
+.market-mind-symbol::before {
+  height: 68px;
+  transform: translateX(-38px);
+}
+
+.market-mind-symbol::after {
+  height: 42px;
+  transform: translateX(2px);
+  opacity: 0.65;
+}
+
+.market-mind-symbol strong {
+  position: relative;
+  z-index: 1;
+  color: #fff4e5;
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+}
+
+.market-mind-symbol strong + strong {
+  color: var(--mint);
+}
+
+@media (max-width: 900px) {
+  .market-mind-card {
+    grid-template-columns: 1fr;
+  }
+}
+
 .journal-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
